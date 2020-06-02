@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    padding: 30px;
+    background: linear-gradient(-90deg,  #a3d9ec, #aae7d9, #f5cec2, #ecc6d4);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+}
+
+img {
+    border: 2px solid #808080;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 100%;
+    height: auto;
+}
+
+#info {
+    text-align: justify;
+}
+
+#today {
+    text-align: right;
+    font-style: italic;
+}
+
+@media screen and (min-width: 1025px) {
+    body {
+        padding: 0 10%;
+    } 
+    img{
+        width: 1000px;
+        height:700px;
+    }
+}
+  
+@media screen and (min-width: 480px) {
+    body {
+        padding: 70px;
+    }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

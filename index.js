@@ -12,6 +12,8 @@ fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
     let info = document.getElementById('info');
     info.innerText = data.explanation
 
-    //let copyRight = document.getElementById('copyright');
-    //copyRight.innerText = data.copyright
+    if (data.copyright){
+        let copyRight = document.getElementById('copyright');
+        copyRight.innerText = data.copyright
+    }
 })

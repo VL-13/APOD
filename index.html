@@ -8,15 +8,10 @@
     <title>NASA - Planetary</title>
 </head>
 <body>
-    <div>
-        <p id="today"> </p>
-        <h1 id="title"> </h1>
-        <img id="new-image" src="" alt="NASA img!">
-        <p id="info"> </p> <br> <br>
-        <div>
-            <span>&#169;</span><span id="copyright"> NASA | National Aeronautics and Space Administration </span>
-        </div>
-    </div>
+    <div id="loader" class="center"></div>
+    <header>
+        <button onclick="apod.addPictureOfDay()">Load new APOD</button>
+    </header>
     <script src="index.js"></script>
 </body>
 </html>

@@ -1,13 +1,3 @@
-document.onreadystatechange = function() { 
-    if (document.readyState !== "complete") { 
-        document.querySelector("body").style.visibility = "hidden"; 
-        document.querySelector("#loader").style.visibility = "visible"; 
-    } else { 
-        document.querySelector("#loader").style.display = "none"; 
-        document.querySelector("body").style.visibility = "visible"; 
-    } 
-}; 
-
 function Apod(id){
     this.id = id;
     this.date = undefined;
@@ -27,7 +17,7 @@ function Apod(id){
         let title = document.createElement('h1');
         title.innerText = data.title;
         if (data.title === undefined) {
-            title.innerText = "⚠ \n Oops! Something went wrong. \n :(";
+            title.innerText = "⚠ \n Oops! Something went wrong.\n ";
         }
     
         let imageDiv = document.createElement('div');
@@ -52,12 +42,15 @@ function Apod(id){
         let paragraph = document.createElement('p');
         paragraph.innerText = data.explanation;
         if (data.explanation === undefined) {
-            paragraph.innerText = "This page didn't load correctly. Please click 'Load new APOD' to see previous APOD or come back later!";
+            paragraph.innerText = "This content didn't load correctly. Please click 'Load new APOD' to see previous APOD or come back later! \n ";
         }
+
+        let line = document.createElement('hr');
 
         this.container.append(title);
         this.container.append(imageDiv);
         this.container.append(paragraph);
+        
     
         if(data.copyright) {
             let copyrightDiv = document.createElement('div');
@@ -68,7 +61,10 @@ function Apod(id){
             copyrightDiv.append(copyrightSpan);
             this.container.append(copyrightDiv);
         }  
+
+        this.container.append(line);
     }
+
     this.addPictureOfDay = function() {
         let element = document.createElement('div');
         element.setAttribute("class", "today");

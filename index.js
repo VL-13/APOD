@@ -21,7 +21,7 @@ function Apod(id){
         var d = now.getDate();
         var mm = m < 10 ? '0' + m : m;
         var dd = d < 10 ? '0' + d : d;
-        return '' + dd + '/' + mm + '/' + y;
+        return '' + dd + '-' + mm + '-' + y;
     }
     this.renderApp = function (data) {
         let title = document.createElement('h1');

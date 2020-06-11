@@ -21,13 +21,13 @@ function Apod(id){
         var d = now.getDate();
         var mm = m < 10 ? '0' + m : m;
         var dd = d < 10 ? '0' + d : d;
-        return '' + dd + '-' + mm + '-' + y;
+        return '' + y + '-' + mm + '-' + dd;
     }
     this.renderApp = function (data) {
         let title = document.createElement('h1');
         title.innerText = data.title;
         if (data.title === undefined) {
-            title.innerText = "Oops! Something went wrong. \n :(";
+            title.innerText = "⚠ \n Oops! Something went wrong. \n :(";
         }
     
         let imageDiv = document.createElement('div');
@@ -52,13 +52,13 @@ function Apod(id){
         let paragraph = document.createElement('p');
         paragraph.innerText = data.explanation;
         if (data.explanation === undefined) {
-            paragraph.innerText = "This page didn't load correctly. Please click to 'Load new APOD' to see previous APOD or come back later!";
+            paragraph.innerText = "This page didn't load correctly. Please click 'Load new APOD' to see previous APOD or come back later!";
         }
-    
+
         this.container.append(title);
         this.container.append(imageDiv);
         this.container.append(paragraph);
-
+    
         if(data.copyright) {
             let copyrightDiv = document.createElement('div');
             copyrightDiv.classList.add('copyright');
@@ -67,19 +67,20 @@ function Apod(id){
             copyrightSpan.innerHTML = '© ' + data.copyright;
             copyrightDiv.append(copyrightSpan);
             this.container.append(copyrightDiv);
-        }
+        }  
     }
-    this.addPictureOfDay = function(){
+    this.addPictureOfDay = function() {
         let element = document.createElement('div');
         element.setAttribute("class", "today");
-        if(this.date === undefined){
-            this.date = new Date()
+        if(this.date === undefined) {
+            this.date = new Date();
         } else {
-            this.date = new Date(this.date.setDate(this.date.getDate()-1));
+            this.date = new Date(this.date.setDate(this.date.getDate() - 1));
         }
         fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=' + this.dateFormatter())
         .then(response => response.json())
         .then(data => this.renderApp(data))
+
         element.innerText = this.dateFormatter();
         this.container.append(element);
     }

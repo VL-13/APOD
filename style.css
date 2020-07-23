@@ -115,39 +115,27 @@ hr {
 }
 
 #top-button {
+	display: none;
 	position: fixed;
-	width: 45px;
-	height: 45px;
+	width: 50px;
+	height: 50px;
 	z-index: 99;
 	text-align: center;
 	border-radius: 4px;
 	bottom: 30px;
 	right: 30px;
-	font-size: 35px;
+	
+	font-size: 25px;
 	border: none;
 	outline: none;
-	background-color: #2c3e50;
-	color: whitesmoke;
+	background-color: #283B42;
+	color: white;
 	cursor: pointer;
 	padding: 5px;
-	display: inline-block;
-	transition: background-color .3s, 
-	  opacity .5s, visibility .5s;
-	opacity: 0;
+	
   }
-  #top-button::after {
-	line-height: 50px;
-	color: #fff;
-  }
+  
   #top-button:hover {
-	cursor: pointer;
 	background-color: #E4E5E6;
 	color: #2c3e50;
-  }
-  #top-button:active {
-	background-color: #555;
-  }
-  #top-button.show {
-	opacity: 1;
-	visibility: visible;
   }

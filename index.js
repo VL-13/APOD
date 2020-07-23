@@ -1,7 +1,5 @@
 import { Apod } from './apod.js';
 
-window.apod = new Apod();
-
 //Get the button
 var mybutton = document.getElementById("top-button");
 
@@ -21,3 +19,5 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+window.apod = new Apod();
